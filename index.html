@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+	<script src="./angular.min.js"></script>
+	
+</head>
+<body>
+	<div ng-app="myApp">
+		<p style="color:{{mycolor}}">{{mycolor}}I am from app level</p>
+		<div ng-controller="myctrl">
+		The answer for 2+5 is ={{2+5}}<br>
+		this is done by {{name}}
+		<input style="background-color:{{defaultcolor}}" ng-model="defaultcolor" value="{{defaultcolor}}"/>
+		<myowndirective></myowndirective>
+		<p style="color:{{color}}">
+			my friends are:
+		</p>
+		<div ng-repeat="name in myfriendsarray">
+			{{name}}
+		</div>
+		<p>
+			My details json:
+		</p>
+		<div ng-repeat="num in mydetails" >
+			{{num.name}}
+		</div>
+		<p style="color:{{mycolor}}">
+			select one form below
+		</p>
+		<select ng-model="selection">
+			<option value="one">one</option>
+			<option value="two">two</option>
+		</select>
+		<p>Your selected:{{selection}}</p>
+		<form name="sampleform">
+			<label>
+				Enter your email
+			</label>
+			<input id="email" type="email" ng-model="email" name="email"/>
+			<span ng-show="!sampleform.email.$error.email">
+				your valid email is {{email}}
+			</span>
+			
+		</form>
+			<div>
+				<button ng-click="plusOne()">
+					clickme
+				</button>
+			your likes:	{{likes}}
+			</div>
+			<p>you are looking at: {{myUrl}}</p>
+			<div>
+				<p>
+					click button to show the alert
+				</p>
+				<button ng-click="alertme()">
+					Alertme
+				</button>
+				
+			</div>
+			<div>
+			
+				{{mymessage}}
+				the current time: {{mytime}}
+			</div>
+			<div> 
+				<input type="number" name="binaryconvert" ng-model="tobinary"/>
+			</div>
+			{{mybinaryfunc}}
+		</div>
+		
+	</div>
+	<link rel="stylesheet" type="text/css" href="./mystyle.css">
+	<script src="./myscript.js"></script>
+	<script src="./mycontroller.js"></script>
+</body>
+</html>
